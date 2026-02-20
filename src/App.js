@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Login from "./page/login/Login";
+import Signin from "./page/Signin";
+import Navbar from "./page/Landingpage/Navbar";
+import Landing from "./page/Landingpage/Landing";
+import Dasboard from "./page/dashboard/Dashboard";
+import Welcome from "./page/dashboard/overview/Welcome";
+import Sidebar from "./page/dashboard/Sidebar";
+import Notifications from "./page/dashboard/notification/Notification";
+import ProfileForm from "./page/dashboard/profile/ProfileForm";
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      
+
+
+
+      
+      
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signin />} />
+        <Route path="/dashboard" element={<Dasboard />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
